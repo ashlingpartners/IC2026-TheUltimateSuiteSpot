@@ -276,6 +276,13 @@ svg.l{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible
 .decision-model b{display:block;font-size:23px;margin-bottom:10px;color:var(--lime)}
 .decision-model p{font-size:22px;line-height:1.4;color:var(--soft)}
 .architecture-slide .nd.s{top:640px!important}
+.deployment-boundary{position:absolute;left:95px;top:390px;width:1730px;height:600px;border:3px solid var(--sky);border-radius:28px;background:rgba(108,199,232,.025)}
+.deployment-boundary span{position:absolute;left:30px;top:-16px;padding:0 16px;background:var(--ink);color:var(--sky);font:700 20px var(--mono);letter-spacing:3px}
+.bicep-deploy{position:absolute;left:1095px;top:272px;width:730px;height:80px;display:flex;align-items:center;gap:26px;padding:0 28px;border:2px solid var(--lime);border-radius:18px;background:var(--ink2)}
+.bicep-deploy strong{font:700 32px var(--disp);color:var(--lime);white-space:nowrap}
+.bicep-deploy span{font-size:23px;color:var(--soft)}
+.bicep-deploy code{font:600 20px var(--mono);color:var(--lime);white-space:nowrap}
+.deployment-contents{position:absolute;left:170px;top:165px;width:1920px;height:1080px;transform:scale(.82);transform-origin:0 0}
 .architecture-slide .insight{top:934px;height:42px;border:0;background:none;padding:0;font-size:22px}
 .architecture-slide .insight b{font-size:25px}
 .architecture-slide.st4 #archl{opacity:.2}
@@ -536,6 +543,14 @@ svg.l{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible
 <section class="slide architecture-slide" data-steps="4" aria-label="Architecture on Azure">
   <div class="kick f" data-f="0">HOW · RUNNING ON MICROSOFT AZURE</div>
   <div class="h2 f" data-f="0" style="--d:.1s">Build once. Govern once. <span class="lime">Deploy many.</span></div>
+  <div class="deployment-boundary f" data-f="0"><span>AZURE DEPLOYMENT</span></div>
+  <aside class="bicep-deploy f" data-f="0" aria-label="Azure Bicep is used for easy, repeatable deployment with azd up">
+    <strong>Azure Bicep</strong><span>Easy, repeatable deployment</span><code>azd up</code>
+  </aside>
+  <svg class="l f" data-f="0" viewBox="0 0 1920 1080" role="img" aria-label="Azure Bicep provisions the Azure deployment below">
+    <path d="M1460 354 V384 M1448 372 L1460 386 L1472 372" fill="none" stroke="#A9F452" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="deployment-contents">
   <svg class="l" id="archl">
     <g class="f" data-f="1" fill="none" stroke="#3B5760" stroke-width="5" stroke-linecap="round">
       <path id="p1" d="M425 450 H565"/><path id="p2" d="M895 430 C960 430,970 360,1035 360"/><path id="p3" d="M895 470 C960 470,970 560,1035 560"/>
@@ -580,6 +595,7 @@ svg.l{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible
     <div><b>Value to the owner</b><p>Prioritizes attention and flags missing support or disagreement for review. People still approve.</p></div>
   </aside>
   <div class="insight f" data-f="3"><b>Application Insights</b>One correlation chain: issue → agent run → tool calls → approval → action → value.</div>
+  </div>
   <!-- Decision-1 usage: apps/agent_host/src/ashling_agent_host/decision.py and ui.py.
        Model reference: https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision -->
 </section>
